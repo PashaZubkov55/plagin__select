@@ -1,0 +1,63 @@
+.app{
+  padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+
+}
+.wrap{
+  width: 500px;
+}
+$height: 46px;
+
+.select{
+  cursor: pointer;
+  // усли есть клас open , то:
+  &.open{
+    .select__dropdown{
+      display: block;
+    }
+    .select__input{
+      border-bottom: none;
+    }
+
+  }
+  width: 100%; //займет всю ширину родилеля
+  position: relative;
+  &__input{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: $height;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+
+
+  }
+
+  &__dropdown{
+    display: none;
+    position: absolute;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    top: $height; //для того чтобы droppdown позиционировался по высоте инзута
+    left: 0;
+    right: 0;
+    max-height: 200px;
+    overflow-y: auto
+  }
+  &__list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  &__item{
+    padding:1rem;
+    border-bottom:1px solid black;
+
+    &:hover{
+      background-color: red;
+      cursor:pointer;
+      transition: .20s background-color ease-in;
+    }
+  }
+}
